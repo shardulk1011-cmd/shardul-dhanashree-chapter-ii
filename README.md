@@ -1,31 +1,27 @@
-# SHARDUL × DHANASHREE — CHAPTER II (V2)
+# A Letter for Dhanashree ♡
 
-A mobile-first anniversary microsite for 24 September 2026.
+A responsive, mobile-first apology microsite made by Shardul for Dhanashree. It uses the ten existing memory photos and a warm, understated visual style.
 
-## What's new in V2
-- Favourite memory added: **17 October 2024**
-- The “Mysterious One” case file now uses Dhanashree's actual habits:
-  - randomly disappears from WhatsApp
-  - says “nothing” when something is definitely wrong
-  - has a particular expression when angry
-- Soundtrack buttons now open Spotify.
-- The exact “Tu Hi Haqeekat” Spotify track is linked; other songs use Spotify search where the exact version could not be uniquely verified.
+## Experience
+- A heartfelt apology focused on accountability, listening, and respect.
+- Clear commitments to show change through actions rather than grand promises.
+- A gallery using the existing `memory-01.jpg` through `memory-10.jpg` files.
+- Four optional notes that open in an accessible modal.
+- Optional original soft instrumental audio, only after the visitor taps the music control.
+- Responsive layouts, keyboard-closeable notes, visible focus states, and reduced-motion support.
 
 ## Files
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/` — the 10 supplied photos
+- `index.html` — page content
+- `style.css` — responsive visual design
+- `script.js` — note interactions, scroll progress, optional music
+- `memory-01.jpg` … `memory-10.jpg` — existing photographs (kept in the repository root)
 
 ## Publish with GitHub Pages
-1. Create/sign in to GitHub.
-2. Create a new **public** repository, e.g. `shardul-dhanashree-chapter-ii`.
-3. Upload everything inside this folder, keeping the `assets` folder.
-4. Go to **Settings → Pages**.
-5. Under **Build and deployment**, select **Deploy from a branch**.
-6. Select `main` and `/ (root)`, then save.
-7. Wait for the deployment to finish.
-8. GitHub will provide a `https://...github.io/.../` link that you can send on WhatsApp.
+1. Review and merge the `apology-redesign` branch into `main`.
+2. Open repository **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select `main` and `/ (root)`, then save.
+5. Once deployment finishes, the site will be available at the repository's GitHub Pages URL.
 
-## Important
-Do not rename `index.html`, `style.css`, `script.js`, or the `assets` folder unless you also update the references in `index.html`.
+## A note about the apology
+The page is meant to offer an apology without demanding a response or forgiveness. Please only send it if it feels appropriate, and give her the space she asks for.
