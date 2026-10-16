@@ -1,97 +1,35 @@
-const anniversary = new Date("2024-09-24T00:00:00+05:30");
-
-function pad(n){return String(Math.max(0,n)).padStart(2,"0")}
-function updateCounter(){
-  const now = new Date();
-  const elapsed = Math.max(0, now - anniversary);
-  const total = Math.floor(elapsed/1000);
-  const days = Math.floor(total/86400);
-  const hours = Math.floor((total%86400)/3600);
-  const minutes = Math.floor((total%3600)/60);
-  const seconds = total%60;
-  document.getElementById("days").textContent = pad(days);
-  document.getElementById("hours").textContent = pad(hours);
-  document.getElementById("minutes").textContent = pad(minutes);
-  document.getElementById("seconds").textContent = pad(seconds);
-  document.getElementById("counterLabel").textContent = "TOGETHER FOR";
-  document.getElementById("counterTitle").textContent = "24 SEPTEMBER 2024";
-  document.getElementById("counterCaption").textContent = "and somehow, every second still feels worth counting.";
-}
-updateCounter();
-setInterval(updateCounter,1000);
-
-const progressBar = document.getElementById("progressBar");
-window.addEventListener("scroll",()=>{
-  const h = document.documentElement.scrollHeight - innerHeight;
-  progressBar.style.width = h > 0 ? (scrollY / h * 100) + "%" : "0%";
-},{passive:true});
-
-document.querySelectorAll(".envelope").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.getElementById("modalText").textContent = btn.dataset.message;
-    document.getElementById("messageModal").classList.add("show");
-    document.getElementById("messageModal").setAttribute("aria-hidden","false");
-  });
-});
-function closeModal(){
-  document.getElementById("messageModal").classList.remove("show");
-  document.getElementById("messageModal").setAttribute("aria-hidden","true");
-}
-document.getElementById("closeModal").addEventListener("click",closeModal);
-document.querySelector(".modal-backdrop").addEventListener("click",closeModal);
-
-/* Soft original romantic instrumental using the browser Web Audio API. */
-let audioContext = null;
-let masterGain = null;
-let soundtrackTimer = null;
-let soundtrackOn = false;
-const melody = [[261.63,.42],[329.63,.42],[392,.58],[329.63,.42],[293.66,.42],[349.23,.42],[440,.58],[349.23,.42],[261.63,.42],[329.63,.42],[392,.42],[523.25,.7],[392,.42],[349.23,.42],[329.63,.42],[293.66,.7]];
-let melodyIndex = 0;
+/* A small, original, gentle instrumental. Audio begins only after the visitor chooses to play it. */
+let audioContext=null, masterGain=null, soundtrackTimer=null, soundtrackOn=false, melodyIndex=0;
+const melody=[[261.63,.48],[329.63,.48],[392,.62],[329.63,.45],[293.66,.48],[349.23,.48],[440,.62],[349.23,.45],[261.63,.48],[329.63,.48],[392,.48],[523.25,.72],[392,.48],[349.23,.48],[329.63,.48],[293.66,.72]];
 function playNote(freq,duration){
-  if(!audioContext || !masterGain)return;
-  const now=audioContext.currentTime;
-  const osc=audioContext.createOscillator();
-  const gain=audioContext.createGain();
-  osc.type="sine";
-  osc.frequency.setValueAtTime(freq,now);
-  gain.gain.setValueAtTime(.0001,now);
-  gain.gain.exponentialRampToValueAtTime(.045,now+.08);
-  gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
-  osc.connect(gain).connect(masterGain);
-  osc.start(now);
-  osc.stop(now+duration+.03);
+  if(!audioContext||!masterGain)return;
+  const now=audioContext.currentTime,osc=audioContext.createOscillator(),gain=audioContext.createGain();
+  osc.type="sine";osc.frequency.setValueAtTime(freq,now);
+  gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.035,now+.09);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+  osc.connect(gain).connect(masterGain);osc.start(now);osc.stop(now+duration+.04);
 }
-function playMelody(){
-  if(!soundtrackOn)return;
-  const [freq,duration]=melody[melodyIndex];
-  playNote(freq,duration);
-  melodyIndex=(melodyIndex+1)%melody.length;
-  soundtrackTimer=setTimeout(playMelody,duration*1000+70);
-}
+function playMelody(){if(!soundtrackOn)return;const [freq,duration]=melody[melodyIndex];playNote(freq,duration);melodyIndex=(melodyIndex+1)%melody.length;soundtrackTimer=setTimeout(playMelody,duration*1000+100)}
 function startSoundtrack(){
-  audioContext=audioContext||new(window.AudioContext||window.webkitAudioContext)();
-  if(audioContext.state==="suspended")audioContext.resume();
-  masterGain=masterGain||audioContext.createGain();
-  masterGain.gain.setTargetAtTime(.8,audioContext.currentTime,.3);
-  masterGain.connect(audioContext.destination);
-  soundtrackOn=true;
-  melodyIndex=0;
-  playMelody();
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return;
+  audioContext=audioContext||new AudioContextClass();if(audioContext.state==="suspended")audioContext.resume();
+  if(!masterGain){masterGain=audioContext.createGain();masterGain.gain.value=.75;masterGain.connect(audioContext.destination)}
+  masterGain.gain.setTargetAtTime(.75,audioContext.currentTime,.2);soundtrackOn=true;melodyIndex=0;playMelody();
 }
-function stopSoundtrack(){
-  soundtrackOn=false;
-  clearTimeout(soundtrackTimer);
-  if(masterGain&&audioContext)masterGain.gain.setTargetAtTime(.0001,audioContext.currentTime,.2);
-}
+function stopSoundtrack(){soundtrackOn=false;clearTimeout(soundtrackTimer);if(masterGain&&audioContext)masterGain.gain.setTargetAtTime(.0001,audioContext.currentTime,.15)}
 const soundToggle=document.getElementById("soundToggle");
 soundToggle.addEventListener("click",()=>{
-  if(soundtrackOn){
-    stopSoundtrack();
-    soundToggle.setAttribute("aria-pressed","false");
-    soundToggle.innerHTML="♫ <span>Soundtrack</span>";
-  }else{
-    startSoundtrack();
-    soundToggle.setAttribute("aria-pressed","true");
-    soundToggle.innerHTML="Ⅱ <span>Playing</span>";
-  }
+  if(soundtrackOn){stopSoundtrack();soundToggle.setAttribute("aria-pressed","false");soundToggle.innerHTML='♫ <span>Soft music</span>'}
+  else{startSoundtrack();if(soundtrackOn){soundToggle.setAttribute("aria-pressed","true");soundToggle.innerHTML='Ⅱ <span>Playing</span>'}}
 });
+const progressBar=document.getElementById("progressBar");
+function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.width=max>0?Math.min(100,window.scrollY/max*100)+"%":"0%"}
+window.addEventListener("scroll",updateProgress,{passive:true});window.addEventListener("resize",updateProgress);updateProgress();
+const modal=document.getElementById("messageModal"),modalTitle=document.getElementById("modalTitle"),modalText=document.getElementById("modalText"),closeModalButton=document.getElementById("closeModal");
+let lastTrigger=null;
+function openNote(button){lastTrigger=button;modalTitle.textContent=button.dataset.title||"A little note";modalText.textContent=button.dataset.message||"";modal.classList.add("show");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";closeModalButton.focus()}
+function closeNote(){modal.classList.remove("show");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";if(lastTrigger)lastTrigger.focus()}
+document.querySelectorAll(".note-envelope").forEach(button=>button.addEventListener("click",()=>openNote(button)));
+closeModalButton.addEventListener("click",closeNote);
+document.getElementById("modalDone").addEventListener("click",closeNote);
+modal.querySelector(".modal-backdrop").addEventListener("click",closeNote);
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&modal.classList.contains("show"))closeNote()});
