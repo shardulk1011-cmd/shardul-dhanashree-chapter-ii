@@ -1,208 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#08070a" />
-  <meta property="og:title" content="Shardul × Dhanashree — Chapter II" />
-  <meta property="og:description" content="Two years. One extraordinary, mysterious story." />
-  <meta property="og:type" content="website" />
-  <meta name="description" content="A private anniversary experience made for Dhanashree." />
-  <title>Shardul × Dhanashree — Chapter II</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#110b11">
+  <meta property="og:title" content="A letter for you — Shardul">
+  <meta property="og:description" content="A little corner of the internet, made with care and honesty.">
+  <meta property="og:type" content="website">
+  <meta name="description" content="A heartfelt apology and a few memories, written with love and respect.">
+  <title>A letter for you ♡</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grain"></div>
-  <div class="progress"><span id="progressBar"></span></div>
-
-  <button class="sound-toggle" id="soundToggle" aria-label="Play romantic instrumental soundtrack" aria-pressed="false">♫ <span>Soundtrack</span></button>
-
+  <div class="grain" aria-hidden="true"></div>
+  <div class="reading-progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <button class="sound-toggle" id="soundToggle" aria-label="Play soft instrumental" aria-pressed="false">♫ <span>Soft music</span></button>
   <main>
-    <section class="hero" id="home">
-      <div class="orb orb-a"></div>
-      <div class="orb orb-b"></div>
-      <div class="hero-inner">
-        <p class="eyebrow reveal">A little something for the girl who made ordinary days extraordinary.</p>
-        <h1 class="reveal delay-1">Shardul <span>×</span> Dhanashree</h1>
-        <p class="chapter reveal delay-2">CHAPTER II</p>
-        <div class="hero-line reveal delay-3"></div>
-        <p class="hero-copy reveal delay-3">Some stories are planned.<br>Ours just… happened.</p>
-        <button class="enter-btn reveal delay-4" onclick="document.getElementById('begin').scrollIntoView({behavior:'smooth'})">
-          <span>ENTER OUR STORY</span><b>↓</b>
-        </button>
+    <section class="hero" id="top">
+      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="hero-content">
+        <p class="eyebrow reveal">made gently, with a full heart</p>
+        <div class="small-heart reveal delay-1" aria-hidden="true">♡</div>
+        <h1 class="reveal delay-1">Dhanashree,</h1>
+        <p class="hero-subtitle reveal delay-2">there are a few things<br>I've been wanting to say properly.</p>
+        <p class="hero-note reveal delay-3">No expectations. Just honesty.</p>
+        <button class="scroll-cta reveal delay-4" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">READ MY LETTER <span>↓</span></button>
       </div>
+      <div class="hero-bottom">A NOTE FROM SHARDUL <span>✦</span> FOR YOUR EYES ONLY</div>
     </section>
 
-    <section class="intro section" id="begin">
-      <div class="section-tag">01 / THE BEGINNING</div>
-      <div class="split">
-        <div>
-          <p class="kicker">December 2023</p>
-          <h2>Before we became <em>us.</em></h2>
+    <section class="letter-section section" id="letter">
+      <div class="section-label"><span>01</span> / THE APOLOGY</div>
+      <article class="letter-paper">
+        <p class="letter-date">A letter I wanted to write with care</p>
+        <h2>I'm sorry.<br><em>And I mean it.</em></h2>
+        <div class="letter-body">
+          <p>My Dhanashree,</p>
+          <p>I've been thinking about us, about you, and about the moments when I could have handled things better. I don't want to hide behind excuses or make this about how bad I feel. I want to acknowledge that my words and actions can affect you, and I'm genuinely sorry for the hurt I've caused.</p>
+          <p>You deserve to feel heard, respected, and safe telling me how you feel — even when the conversation is difficult. I should never make you feel like your feelings are too much, or that you have to explain your hurt perfectly before I take it seriously.</p>
+          <p>I can't rewrite a moment by sending a beautiful message. I can only own my part, listen without getting defensive, and try to show you through my actions that I have understood. That's the part that matters most, and I know it takes more than words.</p>
+          <p>I'm not asking you to forget what happened or to be okay before you're ready. You don't owe me an immediate reply, reassurance, or forgiveness. I just wanted you to hear a sincere apology from me, without pressure attached to it.</p>
+          <p>I'm sorry for the hurt. I'm sorry for the moments I didn't show up the way you needed. And I'm sorry for any time my pride got in the way of listening properly.</p>
+          <p class="letter-end">You matter to me — your feelings, your peace, and your happiness. I want to treat all of that with the care it deserves.</p>
         </div>
-        <div class="story">
-          <p>We met in college. Somewhere between ordinary college days and an ordinary December, there was a first date.</p>
-          <p>I didn't know then that the mysterious person sitting across from me would become one of the most extraordinary parts of my life.</p>
-          <div class="tiny-note">The first chapter had already started. We just didn't know it yet.</div>
-        </div>
+        <div class="signature"><span>With love and accountability,</span><strong>Shardul</strong><b>♡</b></div>
+      </article>
+      <p class="quiet-note">An apology isn't a request for you to hurry through your feelings. Take all the time you need.</p>
+    </section>
+
+    <section class="promise-section section">
+      <div class="section-label"><span>02</span> / WHAT I WANT TO DO BETTER</div>
+      <div class="promise-intro">
+        <p class="eyebrow">words are a beginning, not the finish line</p>
+        <h2>Love should feel like<br><em>care in the little things.</em></h2>
+        <p>I don't want to make grand promises just to make this moment easier. These are the things I want to keep practising, consistently.</p>
+      </div>
+      <div class="promises">
+        <article class="promise-card"><span class="number">01</span><div class="promise-icon">♡</div><h3>Listen to understand</h3><p>Let you finish. Hear what you're actually saying. Ask instead of assuming, and listen without preparing a defence.</p></article>
+        <article class="promise-card"><span class="number">02</span><div class="promise-icon">✧</div><h3>Take responsibility</h3><p>Own my mistakes without turning the conversation around or expecting you to comfort me about them.</p></article>
+        <article class="promise-card"><span class="number">03</span><div class="promise-icon">☾</div><h3>Respect your space</h3><p>Give you room when you need it, without guilt, repeated messages, or making you responsible for my feelings.</p></article>
+        <article class="promise-card"><span class="number">04</span><div class="promise-icon">✿</div><h3>Show it consistently</h3><p>Let change be something you can notice over time — not something you have to take on faith because I wrote it here.</p></article>
+      </div>
+      <p class="promise-footnote">I know promises only mean something when my choices match them.</p>
+    </section>
+
+    <section class="memories-section section" id="memories">
+      <div class="section-label"><span>03</span> / OUR LITTLE WINDOWS</div>
+      <div class="memories-heading">
+        <p class="eyebrow">the moments I hold close</p>
+        <h2>Some memories still<br><em>make me smile.</em></h2>
+        <p>These photographs don't erase difficult moments. They simply remind me that our story has held real laughter, tenderness, and memories worth treating gently.</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo photo-1"><img src="memory-01.jpg" alt="A memory with Dhanashree" loading="lazy"><figcaption>That smile I know so well.</figcaption></figure>
+        <figure class="photo photo-2"><img src="memory-02.jpg" alt="A playful memory" loading="lazy"><figcaption>Your wonderfully you moments.</figcaption></figure>
+        <figure class="photo photo-3"><img src="memory-03.jpg" alt="A memory from before we met" loading="lazy"><figcaption>A little piece of your story.</figcaption></figure>
+        <figure class="photo photo-4"><img src="memory-04.jpg" alt="A photo of us together" loading="lazy"><figcaption>Us, in our own little world.</figcaption></figure>
+        <figure class="photo photo-5"><img src="memory-05.jpg" alt="A candid moment" loading="lazy"><figcaption>The moments that make me grin.</figcaption></figure>
+        <figure class="photo photo-6"><img src="memory-06.jpg" alt="A special day together" loading="lazy"><figcaption>A day I remember fondly.</figcaption></figure>
+        <figure class="photo photo-7"><img src="memory-07.jpg" alt="A candid photograph of us" loading="lazy"><figcaption>A little snapshot of us.</figcaption></figure>
+        <figure class="photo photo-8"><img src="memory-08.jpg" alt="Dhanashree in a happy moment" loading="lazy"><figcaption>One more reason to smile.</figcaption></figure>
+        <figure class="photo photo-9"><img src="memory-09.jpg" alt="A happy candid" loading="lazy"><figcaption>The kind of happiness I remember.</figcaption></figure>
+        <figure class="photo photo-10"><img src="memory-10.jpg" alt="A favourite photo of Dhanashree" loading="lazy"><figcaption>And a memory I'll keep close.</figcaption></figure>
+      </div>
+      <p class="gallery-note">No photograph can say everything. But each one carries a little piece of a story that matters to me.</p>
+    </section>
+
+    <section class="reasons-section section">
+      <div class="section-label"><span>04</span> / THINGS I APPRECIATE ABOUT YOU</div>
+      <p class="eyebrow">not because you're perfect — because you're you</p>
+      <h2>The little things<br><em>that are so you.</em></h2>
+      <div class="reasons-list">
+        <div class="reason"><span>01</span><p>The smile that can change the mood of an ordinary day.</p><b>♡</b></div>
+        <div class="reason"><span>02</span><p>Your mysterious side — there's always something more to discover.</p><b>♡</b></div>
+        <div class="reason"><span>03</span><p>The small expressions and little habits that make you unmistakably yourself.</p><b>♡</b></div>
+        <div class="reason"><span>04</span><p>The memories we've made, including the simple moments that didn't need a plan.</p><b>♡</b></div>
+        <div class="reason"><span>05</span><p>The fact that you're your own person, with feelings and a world that deserve respect.</p><b>♡</b></div>
       </div>
     </section>
 
-    <section class="counter-section section">
-      <div class="section-tag">02 / TIME WITH YOU</div>
-      <div class="counter-wrap">
-        <p class="kicker" id="counterLabel">TOGETHER FOR</p>
-        <h2 id="counterTitle">24 SEPTEMBER 2024</h2>
-        <div class="counter-grid" id="counter">
-          <div><strong id="days">00</strong><span>Days</span></div>
-          <div><strong id="hours">00</strong><span>Hours</span></div>
-          <div><strong id="minutes">00</strong><span>Minutes</span></div>
-          <div><strong id="seconds">00</strong><span>Seconds</span></div>
-        </div>
-        <p class="counter-caption" id="counterCaption">and somehow, every second still feels worth counting.</p>
+    <section class="little-notes section">
+      <div class="section-label"><span>05</span> / LITTLE NOTES, JUST IN CASE</div>
+      <div class="notes-heading"><p class="eyebrow">open any one, whenever you feel like it</p><h2>A few gentle reminders.</h2></div>
+      <div class="notes-grid">
+        <button class="note-envelope" data-title="For a difficult day" data-message="I hope today is gentle with you. You don't have to have everything figured out, and you don't have to pretend you're okay if you aren't. I hope you give yourself the same kindness you so often give to other people."><span>01 / ✉</span><b>For a difficult day</b><small>a little gentleness</small></button>
+        <button class="note-envelope" data-title="When you need space" data-message="You are allowed to take your time. You don't need to reply just because I sent you a message, and you don't need to make my feelings your responsibility. I'll respect your space."><span>02 / ✉</span><b>When you need space</b><small>no pressure attached</small></button>
+        <button class="note-envelope" data-title="When you remember us" data-message="I hope the good memories can stay good memories, without needing to solve everything today. I'm grateful for the laughter and the little things we've shared, and I'm sorry for the moments when I didn't care for them as carefully as I should have."><span>03 / ✉</span><b>When you remember us</b><small>the moments we keep</small></button>
+        <button class="note-envelope" data-title="A reminder for you" data-message="Your feelings are valid even when they're complicated. You deserve patience, honesty, respect, and room to be yourself. Please don't ever feel that you have to shrink your feelings to make things easier for someone else."><span>04 / ✉</span><b>A reminder for you</b><small>always worth remembering</small></button>
       </div>
     </section>
 
-    <section class="favorite-memory section" aria-label="Favourite memory">
-      <div class="section-tag">03 / THE DAY I KEEP COMING BACK TO</div>
-      <div class="memory-feature">
-        <div class="memory-date">
-          <span>17</span>
-          <small>OCTOBER</small>
-          <strong>2024</strong>
-        </div>
-        <div class="memory-copy">
-          <p class="kicker">OUR FAVOURITE MEMORY</p>
-          <h2>17 October 2024.</h2>
-          <p>Some dates are just dates. Some become part of you.</p>
-          <p>This is one of those days I'll always keep close — a day that became one of our favourite memories together.</p>
-          <div class="tiny-note">I don't need a thousand words for this one. I just need the date.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery-section section" id="memories">
-      <div class="section-tag">04 / THE MEMORIES</div>
-      <div class="gallery-heading">
-        <p class="kicker">TEN LITTLE WINDOWS INTO YOU</p>
-        <h2>A gallery I could never fit into <em>words.</em></h2>
-      </div>
-      <div class="masonry">
-        <figure class="photo p1"><img src="memory-01.jpg" alt="Dhanashree smiling" loading="lazy"><figcaption>That smile. Still my favourite.</figcaption></figure>
-        <figure class="photo p2"><img src="memory-02.jpg" alt="A playful moment" loading="lazy"><figcaption>The mysterious one, being mysterious.</figcaption></figure>
-        <figure class="photo p3"><img src="memory-03.jpg" alt="A childhood photo" loading="lazy"><figcaption>Long before I knew you.</figcaption></figure>
-        <figure class="photo p4 wide"><img src="memory-04.jpg" alt="Shardul and Dhanashree together" loading="lazy"><figcaption>Us. Somewhere between food, laughter and everything else.</figcaption></figure>
-        <figure class="photo p5"><img src="memory-05.jpg" alt="A funny close-up" loading="lazy"><figcaption>Evidence that I love every version of you.</figcaption></figure>
-        <figure class="photo p6"><img src="memory-06.jpg" alt="A celebration together" loading="lazy"><figcaption>A day worth remembering.</figcaption></figure>
-        <figure class="photo p7 wide"><img src="memory-07.jpg" alt="A candid moment together" loading="lazy"><figcaption>One of those moments that feels like home.</figcaption></figure>
-        <figure class="photo p8"><img src="memory-08.jpg" alt="Dhanashree smiling" loading="lazy"><figcaption>Your smile, again. Because one picture wasn't enough.</figcaption></figure>
-        <figure class="photo p9"><img src="memory-09.jpg" alt="Dhanashree laughing" loading="lazy"><figcaption>My favourite kind of candid.</figcaption></figure>
-        <figure class="photo p10"><img src="memory-10.jpg" alt="Dhanashree smiling" loading="lazy"><figcaption>And somehow, you keep getting more beautiful.</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="love section" style="background:radial-gradient(circle at 15% 20%,rgba(231,161,180,.16),transparent 25%),radial-gradient(circle at 85% 75%,rgba(217,184,137,.12),transparent 28%),linear-gradient(180deg,#100b10,#0b080b);">
-      <div class="section-tag">05 / THINGS I KNOW</div>
-      <div class="cards">
-        <article class="love-card">
-          <span>01</span><h3>My favourite thing about you?</h3><p>Your smile.</p>
-        </article>
-        <article class="love-card accent">
-          <span>02</span><h3>What makes me smile?</h3><p>Your existence.</p>
-        </article>
-        <article class="love-card">
-          <span>03</span><h3>What are you?</h3><p>Extraordinary. And mysteriously, completely you.</p>
-        </article>
-        <article class="love-card">
-          <span>04</span><h3>What happens when you say “nothing”?</h3><p>I know something is definitely wrong.</p>
-        </article>
-        <article class="love-card accent">
-          <span>05</span><h3>What do I notice immediately?</h3><p>That particular expression when you're angry.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="mystery section">
-      <div class="section-tag">06 / THE MYSTERIOUS ONE</div>
-      <div class="mystery-inner">
-        <p class="kicker">CASE FILE: DHANASHREE</p>
-        <h2>Some things about you<br><em>remain classified.</em></h2>
-        <div class="classified">
-          <div><span>STATUS</span><strong>Extraordinary</strong></div>
-          <div><span>KNOWN WEAKNESS</span><strong>Her smile</strong></div>
-          <div><span>CASE #01</span><strong>Randomly disappears from WhatsApp.</strong></div>
-          <div><span>CASE #02</span><strong>Says “nothing” when something is definitely wrong.</strong></div>
-          <div><span>CASE #03</span><strong>Has a particular expression when she's angry.</strong></div>
-        </div>
-        <p class="classified-note">The investigation remains open. The suspect remains mysteriously adorable.</p>
-      </div>
-    </section>
-
-    <section class="soundtrack section" id="soundtrack">
-      <div class="section-tag">07 / OUR SOUNDTRACK</div>
-      <div class="soundtrack-head">
-        <p class="kicker">FIVE SONGS. FIVE FEELINGS.</p>
-        <h2>If our story had a playlist…</h2>
-      </div>
-      <div class="songs">
-        <a class="song" href="https://open.spotify.com/track/4HXoxdUGUYvlUwerf119ag" target="_blank" rel="noopener"><span>01</span><b>Tu Hi Haqeekat</b><i>our beginning · Spotify ↗</i></a>
-        <a class="song" href="https://open.spotify.com/search/Tum%20Mile%20Dil%20Khile" target="_blank" rel="noopener"><span>02</span><b>Tum Mile Dil Khile</b><i>our feeling · Spotify ↗</i></a>
-        <a class="song" href="https://open.spotify.com/search/Madanmanjiri" target="_blank" rel="noopener"><span>03</span><b>Madanmanjiri</b><i>our Marathi chapter · Spotify ↗</i></a>
-        <a class="song" href="https://open.spotify.com/search/Gaurai%20Mazhi" target="_blank" rel="noopener"><span>04</span><b>Gaurai Mazhi</b><i>our warmth · Spotify ↗</i></a>
-        <a class="song" href="https://open.spotify.com/search/Kalyani" target="_blank" rel="noopener"><span>05</span><b>Kalyani</b><i>our quiet moments · Spotify ↗</i></a>
-      </div>
-      <p class="music-note">The ♫ button in the top-right plays a soft original romantic instrumental made especially for this page. Tap it again to pause.</p>
-    </section>
-
-    <section class="open-when section">
-      <div class="section-tag">08 / OPEN WHEN...</div>
-      <h2>For the days when words are needed.</h2>
-      <div class="envelopes">
-        <button class="envelope" data-message="For the days you miss me: I hope you remember that somewhere, someone is thinking about your smile and wishing he could steal a little bit of your time."><span>💌</span><b>you miss me</b><small>open gently</small></button>
-        <button class="envelope" data-message="For the days you're angry at me: I know I make mistakes. I am not promising perfection. I am promising that I will never stop choosing to love you."><span>💌</span><b>you're angry at me</b><small>please open this one</small></button>
-        <button class="envelope" data-message="For a bad day: breathe. One bad day cannot define your whole story. And if you need someone, you already know where I am."><span>💌</span><b>you need a smile</b><small>tiny emergency</small></button>
-        <button class="envelope" data-message="For the anniversary: two years later, I still look at you and think — how did I get this lucky?"><span>💌</span><b>it's our anniversary</b><small>the important one</small></button>
-      </div>
-    </section>
-
-    <section class="letter section">
-      <div class="letter-shell">
-        <div class="section-tag">09 / ONE THING I NEED YOU TO KNOW</div>
-        <div class="letter-content">
-          <p class="kicker">FOR DHANASHREE</p>
-          <h2>No matter what.</h2>
-          <p>I love you so much, no matter what.</p>
-          <p>I do make mistakes. I know that. But that's only a part of it. It doesn't change the way I feel about you, and it never will.</p>
-          <p>I'll never stop loving you.</p>
-          <div class="signature">— Shardul</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final section">
-      <div class="final-inner">
-        <p class="kicker">24 · 09 · 2026</p>
-        <h2>Chapter II<br><em>is ours.</em></h2>
-        <p>And if the first two years were this extraordinary…<br>I can't wait to see what we write next.</p>
-        <div class="final-heart">♡</div>
-        <p class="forever">Happy 2nd Anniversary, Dhanashree.</p>
-        <button class="restart" onclick="window.scrollTo({top:0, behavior:'smooth'})">↟ READ IT AGAIN</button>
-      </div>
+    <section class="closing-section section">
+      <div class="closing-flower" aria-hidden="true">✿</div>
+      <p class="eyebrow">one last thing</p>
+      <h2>You don't have to<br><em>answer this today.</em></h2>
+      <p class="closing-message">I made this because I wanted to say I'm sorry with care — not because a website can fix everything, and not because I expect a particular response.</p>
+      <p class="closing-message">Whenever you're ready, I'd rather listen honestly and understand your side than try to find perfect words. And if you need time or space, I'll respect that too.</p>
+      <p class="closing-love">You matter to me, Dhanashree. I'm sorry I hurt you.</p>
+      <div class="closing-sign">— Shardul <span>♡</span></div>
+      <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ &nbsp; READ AGAIN, ANYTIME</button>
     </section>
   </main>
 
-  <div class="modal" id="messageModal" aria-hidden="true">
+  <div class="modal" id="messageModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-backdrop"></div>
-    <div class="modal-box">
-      <button class="close" id="closeModal">×</button>
-      <div class="modal-heart">♡</div>
-      <p id="modalText"></p>
-    </div>
+    <div class="modal-card"><button class="modal-close" id="closeModal" aria-label="Close note">×</button><div class="modal-flower">♡</div><p class="modal-eyebrow">A LITTLE NOTE FOR YOU</p><h2 id="modalTitle"></h2><p class="modal-message" id="modalText"></p><button class="modal-done" id="modalDone">CLOSE WITH CARE</button></div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
